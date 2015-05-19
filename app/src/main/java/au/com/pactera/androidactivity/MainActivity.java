@@ -21,10 +21,11 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, AnotherActivity.class);
                 //i.putExtra("data", "Hello Pactera");
-                Bundle b = new Bundle();
-                b.putInt("age",2);
-                b.putString("name","pactera");
-                i.putExtra("bundle", b);
+//                Bundle b = new Bundle();
+//                b.putInt("age",2);
+//                b.putString("name","pactera");
+//                i.putExtra("bundle", b);
+                i.putExtra("user", new User("testUser", 2));
                 startActivity(i);
             }
         });

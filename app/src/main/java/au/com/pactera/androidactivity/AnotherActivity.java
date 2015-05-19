@@ -17,9 +17,12 @@ public class AnotherActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_another);
         Intent i = getIntent();
-        Bundle data = i.getBundleExtra("bundle");
         textView = (TextView) findViewById(R.id.textView);
-        textView.setText(String.format("name=%s, name1=%s", data.getString("name"), data.getString("name1","defaultName")));
+//        Bundle data = i.getBundleExtra("bundle");
+//
+//        textView.setText(String.format("name=%s, name1=%s", data.getString("name"), data.getString("name1","defaultName")));
+        User user = (User) i.getSerializableExtra("user");
+        textView.setText(String.format("User ( name = %s, age = %s)",user.getName(), user.getAge()));
     }
 
     @Override
