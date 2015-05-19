@@ -17,8 +17,9 @@ public class AnotherActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_another);
         Intent i = getIntent();
+        Bundle data = i.getBundleExtra("bundle");
         textView = (TextView) findViewById(R.id.textView);
-        textView.setText(i.getStringExtra("data"));
+        textView.setText(String.format("name=%s, name1=%s", data.getString("name"), data.getString("name1","defaultName")));
     }
 
     @Override

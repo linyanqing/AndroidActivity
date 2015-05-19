@@ -20,7 +20,11 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, AnotherActivity.class);
-                i.putExtra("data", "Hello Pactera");
+                //i.putExtra("data", "Hello Pactera");
+                Bundle b = new Bundle();
+                b.putInt("age",2);
+                b.putString("name","pactera");
+                i.putExtra("bundle", b);
                 startActivity(i);
             }
         });
